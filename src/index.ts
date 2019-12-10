@@ -19,10 +19,10 @@ interface PubSubOptions {
 }
 
 export class PubSub {
-  events: EventDescriptor[] = [];
-  eventQueue: Event[] = [];
+  private events: EventDescriptor[] = [];
+  private eventQueue: Event[] = [];
+  private subscriberCount: number = 0;
   eventHistory: Event[] = [];
-  subscriberCount: number = 0;
 
   constructor() {
     this.handleSubscription = this.handleSubscription.bind(this);

@@ -24,6 +24,6 @@ interface PubSubOptions {
 
 ```pubsub.unsubscribe('eventName', subscriberId)```
 
-### Broadcast an event
+### Publish an event
 
-```pubsub.broadcast('eventName', data)```
+```pubsub.publish('eventName', data)```

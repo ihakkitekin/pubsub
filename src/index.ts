@@ -26,11 +26,11 @@ export class PubSub {
 
   constructor() {
     this.handleSubscription = this.handleSubscription.bind(this);
-    this.handleBroadcast = this.handleBroadcast.bind(this);
+    this.handlePublish = this.handlePublish.bind(this);
     this.publishPreviousEvents = this.publishPreviousEvents.bind(this);
     this.subscribe = this.subscribe.bind(this);
     this.unsubscribe = this.unsubscribe.bind(this);
-    this.broadcast = this.broadcast.bind(this);
+    this.publish = this.publish.bind(this);
   }
 
   subscribe(
@@ -69,14 +69,14 @@ export class PubSub {
     }
   }
 
-  broadcast(eventName: string, data: any) {
+  publish(eventName: string, data: any) {
     const event = {
       data,
       name: eventName,
       timestamp: new Date(),
     };
 
-    this.handleBroadcast(event);
+    this.handlePublish(event);
   }
   private publishEvent(subscriber: Subscriber, data: any) {
     setTimeout(() => {
@@ -103,7 +103,7 @@ export class PubSub {
     }
   }
 
-  private handleBroadcast(event: Event) {
+  private handlePublish(event: Event) {
     const targetEvent = this.events.find(e => {
       return e.name === event.name;
     });

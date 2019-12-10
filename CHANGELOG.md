@@ -1,3 +1,7 @@
+# Version 1.2.0
+- Rename broadcast to publish
+- Remove polyfills from closure compiler
+
 # Version 1.1.5
 - Minify output file
 

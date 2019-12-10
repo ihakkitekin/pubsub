@@ -36,7 +36,7 @@ export class PubSub {
   subscribe(
     eventName: string,
     callBack: Function,
-    options: PubSubOptions,
+    options?: PubSubOptions,
   ): string {
     if (typeof callBack !== 'function') return '';
 
@@ -122,7 +122,7 @@ export class PubSub {
   private publishPreviousEvents(
     eventName: string,
     subscriber: Subscriber,
-    options: PubSubOptions,
+    options?: PubSubOptions,
   ) {
     if (typeof options === 'object' && options.collectPreviousEvents) {
       this.eventQueue

@@ -18,7 +18,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run build
+      - run: npm run build && npm run minify
       - persist_to_workspace:
           root: .
           paths:

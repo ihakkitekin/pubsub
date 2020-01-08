@@ -135,3 +135,5 @@ export class PubSub {
     }
   }
 }
+
+export default PubSub;

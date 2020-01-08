@@ -1,4 +1,7 @@
-# Version 1.2.0
+# Version 1.1.7
+- Export default PubSub
+
+# Version 1.1.6
 - Rename broadcast to publish
 - Remove polyfills from closure compiler
 
